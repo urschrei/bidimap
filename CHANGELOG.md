@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Added, Changed, Deprecated, Removed, Fixed, Security
 -->
 
-## [Unreleased]
+## Unreleased
+
+## v0.0.7
 
 ### Added
 - `Send` and `Sync` implementations for all bimap types and their iterators.
