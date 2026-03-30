@@ -169,6 +169,45 @@
 //! assert_eq!(bimap.get_by_left(&'c'), Some(&2));
 //! ```
 //!
+//! ## Custom hashers
+//!
+//! `BiHashMap` supports custom hashers, just like the standard library's
+//! `HashMap`. This is useful when you want to use a faster or
+//! deterministic hasher. The hasher for each side of the bimap can be
+//! configured independently.
+//!
+//! ```
+//! use bidimap::BiHashMap;
+//! use std::collections::hash_map::RandomState;
+//!
+//! // Using the with_hashers constructor
+//! let s_left = RandomState::new();
+//! let s_right = RandomState::new();
+//! let mut bimap = BiHashMap::<char, i32>::with_hashers(s_left, s_right);
+//! bimap.insert('a', 1);
+//!
+//! // Using with_capacity_and_hashers
+//! let bimap = BiHashMap::<char, i32>::with_capacity_and_hashers(
+//!     10,
+//!     RandomState::new(),
+//!     RandomState::new(),
+//! );
+//! ```
+//!
+//! Any type implementing `BuildHasher` can be used. For example, to use
+//! [`fnv`](https://crates.io/crates/fnv) or
+//! [`ahash`](https://crates.io/crates/ahash):
+//!
+//! ```ignore
+//! use bidimap::BiHashMap;
+//! use fnv::FnvBuildHasher;
+//!
+//! let bimap = BiHashMap::<String, u64, FnvBuildHasher, FnvBuildHasher>::with_hashers(
+//!     FnvBuildHasher::default(),
+//!     FnvBuildHasher::default(),
+//! );
+//! ```
+//!
 //! ## `no_std` compatibility
 //!
 //! This crate can be used without the standard library when the `std` feature

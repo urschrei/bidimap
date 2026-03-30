@@ -67,6 +67,26 @@ bidimap = { version = "0.7", default-features = false }
 bidimap = { version = "0.7", features = ["serde"] }
 ```
 
+## Custom hashers
+
+`BiHashMap` supports custom hashers for each side of the bimap independently,
+just like the standard library's `HashMap`. This is useful when you want to use
+a faster or deterministic hasher such as [fnv](https://crates.io/crates/fnv)
+or [ahash](https://crates.io/crates/ahash).
+
+```rust
+use bidimap::BiHashMap;
+use std::collections::hash_map::RandomState;
+
+let s_left = RandomState::new();
+let s_right = RandomState::new();
+let mut bimap = BiHashMap::<char, i32>::with_hashers(s_left, s_right);
+bimap.insert('a', 1);
+```
+
+See [`BiHashMap::with_hashers`](https://docs.rs/bidimap/latest/bidimap/hash/struct.BiHashMap.html#method.with_hashers) and
+[`BiHashMap::with_capacity_and_hashers`](https://docs.rs/bidimap/latest/bidimap/hash/struct.BiHashMap.html#method.with_capacity_and_hashers) for details.
+
 ## Documentation
 
 Documentation for the latest version of `bidimap` is available on [docs.rs].
