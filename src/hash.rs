@@ -894,28 +894,26 @@ impl<'a, L, R> Iterator for RightValues<'a, L, R> {
     }
 }
 
-// safe because internal Rcs are not exposed by the api and the reference counts
-// only change in methods with &mut self
-unsafe impl<L, R, LS, RS> Send for BiHashMap<L, R, LS, RS>
-where
-    L: Send,
-    R: Send,
-    LS: Send,
-    RS: Send,
-{
-}
-unsafe impl<L, R, LS, RS> Sync for BiHashMap<L, R, LS, RS>
-where
-    L: Sync,
-    R: Sync,
-    LS: Sync,
-    RS: Sync,
-{
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn assert_send<T: Send>() {}
+    fn assert_sync<T: Sync>() {}
+
+    #[test]
+    fn send_sync() {
+        assert_send::<BiHashMap<i64, i32>>();
+        assert_sync::<BiHashMap<i64, i32>>();
+        assert_send::<IntoIter<i64, i32>>();
+        assert_sync::<IntoIter<i64, i32>>();
+        assert_send::<Iter<'_, i64, i32>>();
+        assert_sync::<Iter<'_, i64, i32>>();
+        assert_send::<LeftValues<'_, i64, i32>>();
+        assert_sync::<LeftValues<'_, i64, i32>>();
+        assert_send::<RightValues<'_, i64, i32>>();
+        assert_sync::<RightValues<'_, i64, i32>>();
+    }
 
     #[test]
     fn clone() {

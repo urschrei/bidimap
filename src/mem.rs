@@ -38,6 +38,14 @@ impl<T: ?Sized> Wrapper<T> {
     }
 }
 
+// SAFETY: The Rc inside Ref is never exposed by the public API. Each value is
+// shared between exactly two internal maps via Rc::clone, and the reference
+// count is only modified in methods taking &mut self or ownership. This makes
+// it safe to send Ref values across threads and share them between threads,
+// provided the inner type T is itself Send/Sync.
+unsafe impl<T: Send> Send for Ref<T> {}
+unsafe impl<T: Sync> Sync for Ref<T> {}
+
 impl<K, Q> Borrow<Wrapper<Q>> for Ref<K>
 where
     K: Borrow<Q>,

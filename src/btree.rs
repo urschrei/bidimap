@@ -913,28 +913,33 @@ impl<'a, L, R> Iterator for RightRange<'a, L, R> {
     }
 }
 
-// safe because internal Rcs are not exposed by the api and the reference counts
-// only change in methods with &mut self
-unsafe impl<L, R> Send for BiBTreeMap<L, R>
-where
-    L: Send,
-    R: Send,
-{
-}
-
-unsafe impl<L, R> Sync for BiBTreeMap<L, R>
-where
-    L: Sync,
-    R: Sync,
-{
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[cfg(not(feature = "std"))]
     use alloc::vec::Vec;
+
+    fn assert_send<T: Send>() {}
+    fn assert_sync<T: Sync>() {}
+
+    #[test]
+    fn send_sync() {
+        assert_send::<BiBTreeMap<i64, i32>>();
+        assert_sync::<BiBTreeMap<i64, i32>>();
+        assert_send::<IntoIter<i64, i32>>();
+        assert_sync::<IntoIter<i64, i32>>();
+        assert_send::<Iter<'_, i64, i32>>();
+        assert_sync::<Iter<'_, i64, i32>>();
+        assert_send::<LeftValues<'_, i64, i32>>();
+        assert_sync::<LeftValues<'_, i64, i32>>();
+        assert_send::<RightValues<'_, i64, i32>>();
+        assert_sync::<RightValues<'_, i64, i32>>();
+        assert_send::<LeftRange<'_, i64, i32>>();
+        assert_sync::<LeftRange<'_, i64, i32>>();
+        assert_send::<RightRange<'_, i64, i32>>();
+        assert_sync::<RightRange<'_, i64, i32>>();
+    }
 
     #[test]
     fn clone() {
