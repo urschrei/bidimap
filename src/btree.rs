@@ -1,11 +1,11 @@
 //! A bimap backed by two `BTreeMap`s.
 
 use crate::{
-    mem::{Ref, Wrapper},
     Overwritten,
+    mem::{Ref, Wrapper},
 };
 use alloc::{
-    collections::{btree_map, BTreeMap},
+    collections::{BTreeMap, btree_map},
     rc::Rc,
 };
 use core::{
@@ -27,11 +27,7 @@ pub struct BiBTreeMap<L, R> {
     right2left: BTreeMap<Ref<R>, Ref<L>>,
 }
 
-impl<L, R> BiBTreeMap<L, R>
-where
-    L: Ord,
-    R: Ord,
-{
+impl<L, R> BiBTreeMap<L, R> {
     /// Creates an empty `BiBTreeMap`.
     ///
     /// # Examples
@@ -41,7 +37,7 @@ where
     ///
     /// let bimap = BiBTreeMap::<char, i32>::new();
     /// ```
-    pub fn new() -> Self {
+    pub const fn new() -> Self {
         Self {
             left2right: BTreeMap::new(),
             right2left: BTreeMap::new(),
@@ -177,7 +173,13 @@ where
             inner: self.right2left.iter(),
         }
     }
+}
 
+impl<L, R> BiBTreeMap<L, R>
+where
+    L: Ord,
+    R: Ord,
+{
     /// Returns a reference to the right value corresponding to the given left
     /// value.
     ///
@@ -581,8 +583,8 @@ where
 
 impl<L, R> fmt::Debug for BiBTreeMap<L, R>
 where
-    L: fmt::Debug + Ord,
-    R: fmt::Debug + Ord,
+    L: fmt::Debug,
+    R: fmt::Debug,
 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         struct EntryDebugger<'a, L, R> {
@@ -610,16 +612,9 @@ where
     }
 }
 
-impl<L, R> Default for BiBTreeMap<L, R>
-where
-    L: Ord,
-    R: Ord,
-{
+impl<L, R> Default for BiBTreeMap<L, R> {
     fn default() -> BiBTreeMap<L, R> {
-        BiBTreeMap {
-            left2right: BTreeMap::default(),
-            right2left: BTreeMap::default(),
-        }
+        BiBTreeMap::new()
     }
 }
 
@@ -647,11 +642,7 @@ where
     }
 }
 
-impl<'a, L, R> IntoIterator for &'a BiBTreeMap<L, R>
-where
-    L: Ord,
-    R: Ord,
-{
+impl<'a, L, R> IntoIterator for &'a BiBTreeMap<L, R> {
     type Item = (&'a L, &'a R);
     type IntoIter = Iter<'a, L, R>;
 
@@ -660,11 +651,7 @@ where
     }
 }
 
-impl<L, R> IntoIterator for BiBTreeMap<L, R>
-where
-    L: Ord,
-    R: Ord,
-{
+impl<L, R> IntoIterator for BiBTreeMap<L, R> {
     type Item = (L, R);
     type IntoIter = IntoIter<L, R>;
 
@@ -713,7 +700,7 @@ where
     R: Ord,
 {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        self.left2right.partial_cmp(&other.left2right)
+        Some(self.cmp(other))
     }
 }
 

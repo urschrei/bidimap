@@ -146,8 +146,8 @@
 
 use crate::{BiBTreeMap, BiHashMap};
 use serde::{
-    de::{MapAccess, Visitor},
     Deserialize, Deserializer, Serialize, Serializer,
+    de::{MapAccess, Visitor},
 };
 use std::{
     default::Default,
@@ -212,7 +212,7 @@ where
 {
     fn deserialize<D: Deserializer<'de>>(de: D) -> Result<Self, D::Error> {
         de.deserialize_map(BiHashMapVisitor::<L, R, LS, RS> {
-            marker: PhantomData::default(),
+            marker: PhantomData,
         })
     }
 }
@@ -260,7 +260,7 @@ where
 {
     fn deserialize<D: Deserializer<'de>>(de: D) -> Result<Self, D::Error> {
         de.deserialize_map(BiBTreeMapVisitor {
-            marker: PhantomData::default(),
+            marker: PhantomData,
         })
     }
 }
@@ -307,12 +307,12 @@ mod tests {
 
     #[test]
     fn serde_hash_w_hashbrown_hasher() {
-        let hasher_builder = hashbrown::hash_map::DefaultHashBuilder::default();
+        let hasher_builder = hashbrown::DefaultHashBuilder::default();
         let mut bimap = BiHashMap::<
             char,
             u8,
-            hashbrown::hash_map::DefaultHashBuilder,
-            hashbrown::hash_map::DefaultHashBuilder,
+            hashbrown::DefaultHashBuilder,
+            hashbrown::DefaultHashBuilder,
         >::with_capacity_and_hashers(
             4, hasher_builder.clone(), hasher_builder.clone()
         );
