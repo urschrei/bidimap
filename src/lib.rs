@@ -176,7 +176,9 @@
 //! deterministic hasher. The hasher for each side of the bimap can be
 //! configured independently.
 //!
-//! ```
+//! ```rust
+//! # #[cfg(feature = "std")]
+//! # {
 //! use bidimap::BiHashMap;
 //! use std::collections::hash_map::RandomState;
 //!
@@ -192,6 +194,7 @@
 //!     RandomState::new(),
 //!     RandomState::new(),
 //! );
+//! # }
 //! ```
 //!
 //! Any type implementing `BuildHasher` can be used. For example, to use
