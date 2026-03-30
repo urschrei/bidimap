@@ -14,7 +14,7 @@
 //! Serializing and deserializing a [`BiHashMap`]:
 //!
 //! ```
-//! # use bimap::BiHashMap;
+//! # use bidimap::BiHashMap;
 //! // create a new bimap
 //! let mut map = BiHashMap::new();
 //!
@@ -35,7 +35,7 @@
 //!
 //! Serializing and deserializing a [`BiBTreeMap`]:
 //! ```
-//! # use bimap::BiBTreeMap;
+//! # use bidimap::BiBTreeMap;
 //! // create a new bimap
 //! let mut map = BiBTreeMap::new();
 //!
@@ -58,7 +58,7 @@
 //! `Serialize` and `Deserialize` respectively:
 //!
 //! ```compile_fail
-//! # use bimap::BiHashMap;
+//! # use bidimap::BiHashMap;
 //! // this type doesn't implement Serialize or Deserialize!
 //! #[derive(PartialEq, Eq, Hash)]
 //! enum MyEnum { A, B, C }
@@ -85,7 +85,7 @@
 //! any conflicting pairs*, leading to non-deterministic results.
 //! ```
 //! # use std::collections::HashMap;
-//! # use bimap::BiHashMap;
+//! # use bidimap::BiHashMap;
 //! // construct a regular map
 //! let mut map = HashMap::new();
 //!
@@ -118,7 +118,7 @@
 //!
 //! ```
 //! # use std::collections::HashMap;
-//! # use bimap::BiHashMap;
+//! # use bidimap::BiHashMap;
 //! // construct a bimap
 //! let mut bimap = BiHashMap::new();
 //!

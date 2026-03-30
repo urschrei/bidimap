@@ -29,7 +29,7 @@ impl<L, R> BiHashMap<L, R, hash_map::RandomState, hash_map::RandomState> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let bimap = BiHashMap::<char, i32>::new();
     /// ```
@@ -45,7 +45,7 @@ impl<L, R> BiHashMap<L, R, hash_map::RandomState, hash_map::RandomState> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let bimap = BiHashMap::<char, i32>::with_capacity(10);
     /// assert!(bimap.capacity() >= 10);
@@ -64,7 +64,7 @@ impl<L, R, LS, RS> BiHashMap<L, R, LS, RS> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -82,7 +82,7 @@ impl<L, R, LS, RS> BiHashMap<L, R, LS, RS> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// assert!(bimap.is_empty());
@@ -101,7 +101,7 @@ impl<L, R, LS, RS> BiHashMap<L, R, LS, RS> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let bimap = BiHashMap::<char, i32>::with_capacity(10);
     /// assert!(bimap.capacity() >= 10);
@@ -115,7 +115,7 @@ impl<L, R, LS, RS> BiHashMap<L, R, LS, RS> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -137,7 +137,7 @@ impl<L, R, LS, RS> BiHashMap<L, R, LS, RS> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -162,7 +162,7 @@ impl<L, R, LS, RS> BiHashMap<L, R, LS, RS> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -187,7 +187,7 @@ impl<L, R, LS, RS> BiHashMap<L, R, LS, RS> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -217,7 +217,7 @@ where
     ///
     /// ```
     /// use std::collections::hash_map::RandomState;
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let s_left = RandomState::new();
     /// let s_right = RandomState::new();
@@ -239,7 +239,7 @@ where
     ///
     /// ```
     /// use std::collections::hash_map::RandomState;
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let s_left = RandomState::new();
     /// let s_right = RandomState::new();
@@ -276,7 +276,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::<char, i32>::new();
     /// bimap.reserve(10);
@@ -294,7 +294,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::<char, i32>::with_capacity(100);
     /// bimap.insert('a', 1);
@@ -318,7 +318,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::<char, i32>::with_capacity(100);
     /// bimap.insert('a', 1);
@@ -343,7 +343,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -367,7 +367,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -391,7 +391,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -415,7 +415,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -441,7 +441,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -478,7 +478,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);
@@ -519,7 +519,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::{BiHashMap, Overwritten};
+    /// use bidimap::{BiHashMap, Overwritten};
     ///
     /// let mut bimap = BiHashMap::new();
     /// assert_eq!(bimap.len(), 0); // {}
@@ -582,7 +582,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// assert_eq!(bimap.insert_no_overwrite('a', 1), Ok(()));
@@ -607,7 +607,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiHashMap;
+    /// use bidimap::BiHashMap;
     ///
     /// let mut bimap = BiHashMap::new();
     /// bimap.insert('a', 1);

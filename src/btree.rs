@@ -33,7 +33,7 @@ impl<L, R> BiBTreeMap<L, R> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let bimap = BiBTreeMap::<char, i32>::new();
     /// ```
@@ -49,7 +49,7 @@ impl<L, R> BiBTreeMap<L, R> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -67,7 +67,7 @@ impl<L, R> BiBTreeMap<L, R> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// assert!(bimap.is_empty());
@@ -85,7 +85,7 @@ impl<L, R> BiBTreeMap<L, R> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -107,7 +107,7 @@ impl<L, R> BiBTreeMap<L, R> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -132,7 +132,7 @@ impl<L, R> BiBTreeMap<L, R> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -157,7 +157,7 @@ impl<L, R> BiBTreeMap<L, R> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -190,7 +190,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -215,7 +215,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -240,7 +240,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -265,7 +265,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -292,7 +292,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -330,7 +330,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -364,7 +364,7 @@ where
     /// # Example
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -407,7 +407,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::{BiBTreeMap, Overwritten};
+    /// use bidimap::{BiBTreeMap, Overwritten};
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// assert_eq!(bimap.len(), 0); // {}
@@ -470,7 +470,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// assert_eq!(bimap.insert_no_overwrite('a', 1), Ok(()));
@@ -508,7 +508,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);
@@ -545,7 +545,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use bimap::BiBTreeMap;
+    /// use bidimap::BiBTreeMap;
     ///
     /// let mut bimap = BiBTreeMap::new();
     /// bimap.insert('a', 1);

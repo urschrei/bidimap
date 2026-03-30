@@ -19,7 +19,7 @@
 //! # Examples
 //!
 //! ```
-//! use bimap::BiMap;
+//! use bidimap::BiMap;
 //!
 //! let mut elements = BiMap::new();
 //!
@@ -59,7 +59,7 @@
 //! Consider the following example:
 //!
 //! ```
-//! use bimap::BiMap;
+//! use bidimap::BiMap;
 //!
 //! let mut bimap = BiMap::new();
 //! bimap.insert('a', 1);
@@ -83,7 +83,7 @@
 //! and the right values.
 //!
 //! ```
-//! use bimap::{BiMap, Overwritten};
+//! use bidimap::{BiMap, Overwritten};
 //! use std::cmp::Ordering;
 //! use std::hash::{Hash, Hasher};
 //!
@@ -157,7 +157,7 @@
 //! overwritten.
 //!
 //! ```
-//! use bimap::BiMap;
+//! use bidimap::BiMap;
 //! use std::iter::FromIterator;
 //!
 //! // note that both 'b' and 'c' have the right-value 2
@@ -257,7 +257,7 @@ impl<L, R> Overwritten<L, R> {
     /// # Examples
     ///
     /// ```
-    /// use bimap::{BiMap, Overwritten};
+    /// use bidimap::{BiMap, Overwritten};
     ///
     /// let mut bimap = BiMap::new();
     /// assert!(!bimap.insert('a', 1).did_overwrite());

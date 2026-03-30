@@ -1,9 +1,9 @@
 [package]
-name = "bimap"
-version = "0.6.3"
+name = "bidimap"
+version = "0.7.0"
 description = "Bijective maps"
 repository = "https://github.com/urschrei/bimap-rs/"
-documentation = "https://docs.rs/bimap/"
+documentation = "https://docs.rs/bidimap/"
 readme = "README.md"
 keywords = ["bijection", "bidirectional", "map", "container", "two-way"]
 categories = ["data-structures", "algorithms", "no-std"]

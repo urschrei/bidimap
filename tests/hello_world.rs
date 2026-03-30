@@ -3,7 +3,7 @@
 #[test]
 fn main() {
     // A bijective map between letters of the English alphabet and their positions.
-    let mut alphabet = bimap::BiMap::<char, u8>::new();
+    let mut alphabet = bidimap::BiMap::<char, u8>::new();
 
     alphabet.insert('A', 1);
     // some letters omitted for brevity
