@@ -11,6 +11,30 @@ Added, Changed, Deprecated, Removed, Fixed, Security
 
 ## [Unreleased]
 
+### Added
+- `Send` and `Sync` implementations for all bimap types and their iterators.
+- `BiBTreeMap::new` is now `const`.
+- Clippy lint job in CI.
+
+### Changed
+- Relaxed trait bounds: `new`, `len`, `is_empty`, `clear`, `iter`, `left_values`,
+  `right_values`, `Default`, and `IntoIterator` no longer require `Ord` (for
+  `BiBTreeMap`) or `Eq + Hash` (for `BiHashMap`).
+- Relaxed `BiHashMap::with_hashers` and `with_capacity_and_hashers` to only
+  require `BuildHasher`, not `Eq + Hash`.
+- Relaxed `BiHashMap` `Default` to only require `Default` on the hashers.
+- Updated CI to use `dtolnay/rust-toolchain`, `Swatinem/rust-cache`, and
+  `actions/checkout@v6`, replacing deprecated `actions-rs` actions.
+- Tightened internal `Ref` field visibility to `pub(crate)`.
+
+### Fixed
+- Clippy `non_canonical_partial_ord_impl` warning on `BiBTreeMap`.
+- Clippy `default_constructed_unit_structs` warnings in serde module.
+- `hashbrown::DefaultHashBuilder` import path for newer hashbrown versions.
+
+### Removed
+- `rustfmt.toml` (all options were nightly-only and produced warnings on stable).
+
 ## [0.6.3]
 
 ### Added
@@ -73,7 +97,7 @@ provided by the Rust standard library.
 
 ## [0.4.0]
 
-[Unreleased]: https://github.com/billyrieger/bimap-rs/compare/v0.6.3...HEAD
+[Unreleased]: https://github.com/urschrei/bimap-rs/compare/v0.6.3...HEAD
 [0.6.3]: https://github.com/billyrieger/bimap-rs/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/billyrieger/bimap-rs/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/billyrieger/bimap-rs/compare/v0.6.0...v0.6.1
