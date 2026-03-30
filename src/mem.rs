@@ -2,7 +2,7 @@ use alloc::rc::Rc;
 use core::{borrow::Borrow, fmt, ops::Bound};
 
 #[derive(Eq, Hash, Ord, PartialEq, PartialOrd)]
-pub struct Ref<T>(pub Rc<T>);
+pub struct Ref<T>(pub(crate) Rc<T>);
 
 impl<T> Clone for Ref<T> {
     fn clone(&self) -> Self {
