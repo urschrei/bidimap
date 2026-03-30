@@ -79,7 +79,7 @@ Documentation for the latest version of `bidimap` is available on [docs.rs].
 
 | `bidimap` | MSRV   |
 | ---       | ---    |
-| v0.7.0    | 1.66.0 |
+| v0.7.0    | 1.85.0 |
 
 ## License
 
