@@ -6,10 +6,8 @@
 [![license][license badge]](#license)
 
 
-`bidimap` is a pure Rust library for dealing with bijective maps, aiming to
-feel like an extension of the standard library's data structures whenever
-possible. There are no external dependencies by default but [Serde] and
-[`no_std`] compatibility are available through feature flags.
+`bidimap` is a Rust library that provides bijective maps with interfaces which will be familiar to users of Rust's standard data structures whenever
+possible. There are no external dependencies by default but [Serde] as well as [`no_std`] compatibility are available through feature flags.
 
 This is a maintained fork of [`bimap`](https://crates.io/crates/bimap).
 
@@ -53,7 +51,7 @@ fn main() {
 | `std`     | Standard library usage (`HashMap`) | yes                 |
 | `serde`   | (De)serialization using [Serde]    | no                  |
 
-This `Cargo.toml` shows how these features can be enabled and disabled.
+This `Cargo.toml` example shows how these features can be enabled and disabled:
 
 ```toml
 [dependencies]
